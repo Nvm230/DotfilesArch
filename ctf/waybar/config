@@ -19,9 +19,9 @@
   // ░█░█░█░█░█░█░█░█░█░░░█▀▀░▀▀█
   // ░▀░▀░▀▀▀░▀▀░░▀▀▀░▀▀▀░▀▀▀░▀▀▀
 
-  "modules-left": ["custom/launcher","cpu","memory","disk"],
+  "modules-left": ["custom/launcher","cpu","memory","disk","custom/vpn"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["custom/target", "custom/vpn", "cava","network","backlight","battery","clock","custom/power"],
+  "modules-right": ["custom/target", "cava","network","backlight","battery","clock","custom/power"],
 
   // Modules Definition
   "custom/target": {
