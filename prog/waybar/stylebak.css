@@ -1,0 +1,158 @@
+@import "colors.css";
+@import "/home/nvm/.cache/wal/colors-waybar.css";
+
+* {
+    transition: none;
+    box-shadow: none;
+    font-family: "JetBrainsMono Nerd Font", "Product Sans", sans-serif;
+    font-size: 22px;  /* TAMAÑO UNIFORME Y GRANDE */
+    font-weight: 700;
+}
+
+#waybar {
+    background: @background1;
+    border: none;
+    border-right: 1px solid rgba(0,0,0,0.3); 
+}
+
+/* --- ESPACIOS DE TRABAJO --- */
+#workspaces,
+#window {
+    border-radius: 12px;
+    margin: 6px 5px; 
+    padding: 10px 0px; 
+    font-weight: 500;
+    background: @base01;
+    color: @base05;
+}
+
+#workspaces button {
+    margin: 5px 0px;
+    padding: 0px;
+    color: @base02;
+    background: none;
+    border: none;
+}
+
+#workspaces button.active {
+    color: @color5;
+    font-size: 24px;
+}
+
+#workspaces button.urgent * {
+    color: @base08;
+}
+
+/* --- MÓDULOS COMUNES (LA CLAVE DEL CENTRADO) --- */
+#mode,
+#battery,
+#bluetooth,
+#cpu,
+#disk,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#idle_inhibitor,
+#backlight,
+#mpd,
+#clock,
+#temperature,
+#language,
+#custom-notification,
+#custom-playerctl,
+#custom-cava {
+    margin: 6px 5px;   /* Margen externo */
+    padding: 12px 0px; /* Relleno Arriba/Abajo. Izq/Der a 0 obliga a centrar */
+    border-radius: 12px;
+    min-width: 0px;    /* Importante para no forzar anchos */
+    background-color: @base01;
+    color: @base05;
+}
+
+/* Correcciones específicas de color */
+#custom-playerctl.Playing { color: @color5; }
+#custom-playerctl.Paused { color: #928374; }
+#pulseaudio.muted { color: @base08; }
+
+/* Red: Quitamos paddings raros para que se centre igual que los demás */
+#network {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* --- RELOJ (Grande y centrado) --- */
+#clock {
+    background-color: transparent;
+    font-family: "Outfit", sans-serif;
+    font-size: 22px;   /* Igual que los iconos */
+    padding: 5px 0px;
+}
+
+#clock.calendar {
+    margin-left: 6px;
+    background-color: @base00;
+    padding: 0px 18px;
+}
+
+/* --- BANDEJA DEL SISTEMA --- */
+#tray {
+    padding: 10px 0px;
+    margin: 6px 5px;
+    border-radius: 12px;
+    background-color: @base01;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* --- BOTÓN APAGADO (Power) --- */
+#custom-powermenu {
+    font-size: 24px;
+    margin: 6px 5px 15px 5px; 
+    padding: 12px 0px;
+    color: @base01;
+    background: radial-gradient(circle, #cf3247 10%, #7a0d1c 100%);
+    border-radius: 12px;
+}
+
+/* --- BOTÓN INICIO (Launcher) --- */
+#custom-launcher {
+    font-size: 24px;
+    margin: 15px 5px 6px 5px; 
+    padding: 12px 0px;
+    border-radius: 12px;
+    color: @base00;
+    background: radial-gradient(circle, @color5 10%, @color13 100%);
+}
+
+/* --- BATERÍA --- */
+#battery {
+    color: @base01;
+    background: @base07;
+}
+
+#battery.charging {
+    background: @base07;
+}
+
+#battery.warning { background-color: @base09; }
+#battery.critical { background-color: @base08; }
+
+/* Tooltips */
+tooltip {
+    border-radius: 12px;
+    background-color: @base00;
+}
+
+tooltip * {
+    color: @base05;
+    font-size: 16px;
+    padding: 8px;
+}
+
