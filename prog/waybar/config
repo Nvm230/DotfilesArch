@@ -1,26 +1,42 @@
-
 {
     "layer": "top",
     "position": "left",
-    "width": 50, 
+    "width": 50,
     //"height": 48,
     "spacing": 0,
     "margin": "0",
-
-    "modules-left": ["custom/launcher", "custom/playerctl", "custom/cava"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray","pulseaudio", "network", "battery","clock", "custom/powermenu"],
-
+    "modules-left": [
+        "custom/launcher",
+        "custom/playerctl",
+        "custom/cava"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "tray",
+        "pulseaudio",
+        "network",
+        "battery",
+        "clock",
+        "custom/powermenu"
+    ],
     // MODULE CONFIG
-
     "backlight": {
         "format": "{icon} {percent}%",
-        "format-icons": ["","","","", "", "", ""],
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
         "min-length": 7
     },
-
     "battery": {
-	"rotate":270,
+        "rotate": 270,
         "states": {
             "warning": 30,
             "critical": 15
@@ -29,25 +45,28 @@
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{icon} {time}",
-        "format-icons": [" ", " ", " ", " ", " "]
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ]
     },
-
     "clock": {
-        "rotate":0,
+        "rotate": 0,
         "tooltip": false,
-        "format": "{:%d\n%H\n%M}",   // Salto de línea: Hora arriba, Minutos abajo
+        "format": "{:%d\n%H\n%M}", // Salto de línea: Hora arriba, Minutos abajo
         "tooltip-format": "{:%d %B %Y}",
     },
-
     "clock#calendar": {
         "tooltip": false,
         "format": "{:%b %d}"
     },
-
-    "network":{ 
+    "network": {
         "tooltip": true,
         "interval": 30,
-	"format": "",
+        "format": "",
         "format-wifi": " ",
         "format-ethernet": "",
         "format-disconnected": "",
@@ -58,61 +77,58 @@
         "interface": "tun0",
         "format": ""
     },
-
     "pulseaudio": {
         "format": "{icon}",
-    "format-bluetooth": " {volume}%",
-    "format-muted": "󰝟",
-    "format-icons": {
-        "headphone": "",
-        "hands-free": "",
-        "headset": "",
-        "phone": "",
-        "portable": "",
-        "car": "",
-        "default": ["", " ", " "]
+        "format-bluetooth": " {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                " ",
+                " "
+            ]
         },
-    "scroll-step": 3,
-    "on-scroll-up": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 1%+",
-    "on-scroll-down": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 1%-",
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "scroll-step": 3,
+        "on-scroll-up": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 1%+",
+        "on-scroll-down": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 1%-",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
-
-	"hyprland/workspaces": {
+    "hyprland/workspaces": {
         "active-only": false,
         "all-outputs": true,
         "disable-scroll": false,
         "on-scroll-up": "$HOME/.config/hypr/scripts/next-workspace.sh",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
-		"format": "{icon}",
-		"on-click": "activate",
-"persistent-workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "persistent-workspaces": {
             "*": 10
         },
-		"format-icons": {
-			"urgent": "",
-			"active": "",
-			"default": "󰧞",
-    "sort-by-number": true
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": "󰧞",
+            "sort-by-number": true
+        },
     },
-    },
-
     // CUSTOM MODULES
-
-     "custom/launcher": {
-        "format": "‎._.",
+    "custom/launcher": {
+        "format": "._.",
         "on-click": "killall rofi || rofi -show",
         "tooltip": false
     },
-
     "custom/powermenu": {
         "format": " ",
         "on-click": "wlogout",
         "on-click-right": "wlogout",
         "tooltip": false
     },
-
-
     "custom/playerctl": {
         "format": "{icon}",
         "return-type": "json",
@@ -122,8 +138,8 @@
         "on-click": "playerctl previous",
         "on-click-right": "playerctl next",
         "format-icons": {
-        "Playing": "󰒮 󰐌 󰒭",
-        "Paused": "󰒮 󰏥 󰒭"
+            "Playing": "󰒮 󰐌 󰒭",
+            "Paused": "󰒮 󰏥 󰒭"
         },
     },
 }

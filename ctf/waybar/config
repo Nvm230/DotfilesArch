@@ -21,9 +21,24 @@
 
   "modules-left": ["custom/launcher","cpu","memory","disk"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["cava","network","backlight","battery","clock","custom/power"],
+  "modules-right": ["custom/target", "custom/vpn", "cava","network","backlight","battery","clock","custom/power"],
 
   // Modules Definition
+  "custom/target": {
+    "format": "󰓾 {}",
+    "return-type": "json",
+    "interval": 2,
+    "exec": "bash ~/.config/waybar/scripts/target.sh",
+    "tooltip": true
+  },
+
+  "custom/vpn": {
+    "format": "󰆧 {}",
+    "return-type": "json",
+    "interval": 2,
+    "exec": "bash ~/.config/waybar/scripts/vpn.sh",
+    "tooltip": true
+  },
   "custom/launcher" : {
 	"tooltip": true,
 	"tooltip-format" : "Start Here :)",
@@ -173,7 +188,7 @@
    "network": {
 		"tooltip": true,
 		"format-wifi": "<span color='#9ece6a'> </span> ({signalStrength}%)",
-		"format-ethernet": "<span color='#7aa2f7'>󰈁</span> {bandwidthDownBytes} | {ipaddr}",
+		"format-ethernet": "<span color='#7aa2f7'>󰈁</span> {bandwidthDownBytes} | Nvm",
 		"format-disconnected": "<span color='#FF0000'>󰌙 </span>",
         	"interval": 2,
 		"tooltip-format-wifi": "󰢩 Interface: {ifname} \n—————————————————————————\n  {essid} \n󰥛 Signal: {signalStrength} % \n Frequency: {frequency}GHz \n—————————————————————————\n󰶡 {bandwidthDownBytes} - 󰶣 {bandwidthUpBytes}\n—————————————————————————\nIP: {ipaddr} \nSubmask: {netmask} \nGateway: {gwaddr}",
