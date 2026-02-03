@@ -5,22 +5,23 @@
     transition: none;
     box-shadow: none;
     font-family: "JetBrainsMono Nerd Font", "Product Sans", sans-serif;
-    font-size: 22px;  /* TAMAÑO UNIFORME */
+    font-size: 22px;
+    /* TAMAÑO UNIFORME */
     font-weight: 700;
 }
 
 #waybar {
     background: @background1;
     border: none;
-    border-right: 1px solid rgba(0,0,0,0.3); 
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 /* --- ESPACIOS DE TRABAJO --- */
 #workspaces,
 #window {
     border-radius: 12px;
-    margin: 6px 4px; 
-    padding: 10px 0px; 
+    margin: 6px 5px;
+    padding: 10px 0px;
     font-weight: 500;
     background: @base01;
     color: @base05;
@@ -63,9 +64,17 @@
 #custom-playerctl,
 
 /* Correcciones de color */
-#custom-playerctl.Playing { color: @color5; }
-#custom-playerctl.Paused { color: #928374; }
-#pulseaudio.muted { color: @base08; }
+#custom-playerctl.Playing {
+    color: @color5;
+}
+
+#custom-playerctl.Paused {
+    color: #928374;
+}
+
+#pulseaudio.muted {
+    color: @base08;
+}
 
 /* Nota: He borrado el bloque #network específico para que use la regla maestra de arriba y se centre bien */
 
@@ -73,7 +82,7 @@
 #clock {
     background-color: transparent;
     font-family: "Outfit", sans-serif;
-    font-size: 22px;   
+    font-size: 22px;
     padding: 5px 0px;
 }
 
@@ -85,25 +94,27 @@
 
 /* --- BANDEJA DEL SISTEMA --- */
 #tray {
-    padding: 10px 6px; /* Ajustado padding lateral */
-    margin: 6px 4px;
+    padding: 10px 0px;
+    /* Centrado estricto */
+    margin: 6px 5px;
     border-radius: 12px;
     background-color: @base01;
 }
 
-#tray > .passive {
+#tray>.passive {
     -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     -gtk-icon-effect: highlight;
 }
 
 /* --- BOTÓN APAGADO (Power) --- */
 #custom-powermenu {
     font-size: 24px;
-    margin: 6px 4px 15px 4px; 
-    padding: 12px 6px; /* Centrado */
+    margin: 6px 5px 15px 5px;
+    padding: 12px 0px;
+    /* Centrado estricto */
     color: @base01;
     background: radial-gradient(circle, #cf3247 10%, #7a0d1c 100%);
     border-radius: 12px;
@@ -112,8 +123,9 @@
 /* --- BOTÓN INICIO (Launcher) --- */
 #custom-launcher {
     font-size: 24px;
-    margin: 15px 4px 6px 4px; 
-    padding: 12px 10px; /* Centrado */
+    margin: 15px 5px 6px 5px;
+    padding: 12px 0px;
+    /* Centrado estricto */
     border-radius: 12px;
     color: @base00;
     background: radial-gradient(circle, @color5 10%, @color13 100%);
@@ -129,8 +141,13 @@
     background: @base07;
 }
 
-#battery.warning { background-color: @base09; }
-#battery.critical { background-color: @base08; }
+#battery.warning {
+    background-color: @base09;
+}
+
+#battery.critical {
+    background-color: @base08;
+}
 
 /* Tooltips */
 tooltip {
