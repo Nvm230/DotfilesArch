@@ -9,7 +9,7 @@
 
     "modules-left": ["custom/launcher", "custom/playerctl", "custom/cava"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray","pulseaudio", "battery","clock", "custom/powermenu"],
+    "modules-right": ["tray","pulseaudio", "network", "battery","clock", "custom/powermenu"],
 
     // MODULE CONFIG
 
