@@ -1,6 +1,7 @@
 #!/bin/bash
 
-paplay "$HOME/.config/hypr/assests/sounds/wallpaper_change.mp3"
+
+# paplay "$HOME/.config/hypr/assests/sounds/wallpaper_change.mp3"
 image_path=$(find ~/.wallpapers/ -type f | shuf -n1)
 swww img $image_path --transition-type wipe --transition-fps 60
 wal -i $image_path -n ; hyprctl reload ; pkill -f "Kitty_Cava"

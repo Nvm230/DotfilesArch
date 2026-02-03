@@ -19,7 +19,7 @@
 #workspaces,
 #window {
     border-radius: 12px;
-    margin: 6px 5px; 
+    margin: 6px 4px; 
     padding: 10px 0px; 
     font-weight: 500;
     background: @base01;
@@ -85,8 +85,8 @@
 
 /* --- BANDEJA DEL SISTEMA --- */
 #tray {
-    padding: 10px 4px; /* Ajustado padding lateral */
-    margin: 6px 5px;
+    padding: 10px 6px; /* Ajustado padding lateral */
+    margin: 6px 4px;
     border-radius: 12px;
     background-color: @base01;
 }
@@ -102,8 +102,8 @@
 /* --- BOTÓN APAGADO (Power) --- */
 #custom-powermenu {
     font-size: 24px;
-    margin: 6px 5px 15px 5px; 
-    padding: 12px 4px; /* Centrado */
+    margin: 6px 4px 15px 4px; 
+    padding: 12px 6px; /* Centrado */
     color: @base01;
     background: radial-gradient(circle, #cf3247 10%, #7a0d1c 100%);
     border-radius: 12px;
@@ -112,8 +112,8 @@
 /* --- BOTÓN INICIO (Launcher) --- */
 #custom-launcher {
     font-size: 24px;
-    margin: 15px 5px 6px 5px; 
-    padding: 12px 15px; /* Centrado */
+    margin: 15px 4px 6px 4px; 
+    padding: 12px 10px; /* Centrado */
     border-radius: 12px;
     color: @base00;
     background: radial-gradient(circle, @color5 10%, @color13 100%);

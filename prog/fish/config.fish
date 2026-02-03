@@ -9,4 +9,4 @@ set image_files (ls $HOME/.config/fish/assets/greetingImg/*)
 set random_image (random choice $image_files)
 
 # Display the selected image using Kitty's icat
-kitty +kitten icat --align left $random_image 
+# kitty +kitten icat --align left $random_image 
