@@ -33,21 +33,27 @@ APPS=(
 echo "Cambiando a perfil: $PERFIL..."
 
 # Bucle inteligente
+# Bucle inteligente
 for APP in "${APPS[@]}"; do
-    # 1. Limpieza: Borrar siempre el enlace o carpeta actual en .config
-    rm -rf "$CONFIG_DIR/$APP"
+    SOURCE_PATH="$PERFILES_DIR/$PERFIL/$APP"
+    DEST_PATH="$CONFIG_DIR/$APP"
 
-    # 2. Verificación: ¿Existe la carpeta en el perfil destino?
-    if [ -d "$PERFILES_DIR/$PERFIL/$APP" ]; then
-        # SI existe -> Creamos el enlace
-        ln -s "$PERFILES_DIR/$PERFIL/$APP" "$CONFIG_DIR/$APP"
+    # 1. Verificación: ¿Existe la carpeta en el perfil destino?
+    if [ -d "$SOURCE_PATH" ] || [ -f "$SOURCE_PATH" ]; then
+        # 2. Limpieza: Borrar el enlace o carpeta actual SOLO si tenemos reemplazo
+        rm -rf "$DEST_PATH"
+        
+        # 3. Crear el enlace
+        ln -s "$SOURCE_PATH" "$DEST_PATH"
         echo " -> $APP conectado a $PERFIL"
     else
-        # NO existe -> Solo informamos (ya se borró el enlace viejo arriba)
-        # Esto evita errores de "fichero no encontrado"
-        echo "$APP no existe en $PERFIL (Omitido)"
+        # NO existe -> Solo informamos, NO borramos lo que ya hay
+        echo "[!] $APP no existe en $PERFIL (Manteniendo configuración actual)"
     fi
 done
+
+# Guardar estado actual
+echo "$PERFIL" > "$PERFILES_DIR/current_profile"
 
 # ---------------------------------------------------------
 # RECARGA DE SERVICIOS
